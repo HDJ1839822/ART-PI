@@ -10,6 +10,8 @@ int Bsp_led_Turn_on(struct _LED_Device *Device)
 	
 	/*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_R_GPIO_Port, LED_R_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(LED_B_GPIO_Port, LED_B_Pin, GPIO_PIN_RESET);
+	
 
   return 0;
 }
