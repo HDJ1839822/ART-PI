@@ -5,27 +5,29 @@
 #include "LED_Device_struct.h"
 #include "LED_Device_interface.h"
 
-/*包含所有hal库文件*/
+
 
 
 /*涉及到main.h中的宏定义*/
 #include "main.h"
 
 
-
 typedef enum
 {
-  LED_ON = 0U,
-  LED_OFF
-} LED_State;
-
-
-int Bsp_led_Turn_on(struct _LED_Device *Device);
-int Bsp_led_Turn_off(struct _LED_Device *Device);
-int Bsp_led_GPIO_Init(struct _LED_Device *Device);
+  LED_OK = 0U,
+  LED_ERROR
+} _LED_State;
 
 
 
+_LED_State Bsp_led_Turn_on_R(struct _LED_Device *Device);
+_LED_State Bsp_led_Turn_off_R(struct _LED_Device *Device);
+_LED_State Bsp_led_GPIO_Init_R(struct _LED_Device *Device);
+
+
+_LED_State Bsp_led_Turn_on_B(struct _LED_Device *Device);
+_LED_State Bsp_led_Turn_off_B(struct _LED_Device *Device);
+_LED_State Bsp_led_GPIO_Init_B(struct _LED_Device *Device);
 
 
 

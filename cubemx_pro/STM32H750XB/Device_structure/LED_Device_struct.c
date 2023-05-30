@@ -2,31 +2,47 @@
 #include "LED_Device_interface.h"
 
 
-
-/*************Function declaration line*************/
-int Turn_on(struct _LED_Device *Device);
-int Turn_off(struct _LED_Device *Device);
-	
-
 /***************************************************/
-int Turn_on(struct _LED_Device *Device)
+int Turn_on_R(struct _LED_Device *Device)
 	{
 	
-	  return Interface_Turn_on(Device);
+	  return Interface_Turn_on_R(Device);
 	}
 	
-	int Turn_off (struct _LED_Device *Device)
+	int Turn_off_R (struct _LED_Device *Device)
 	{
 		
-		return Interface_Turn_off(Device);
+		return Interface_Turn_off_R(Device);
 	
 	}
 
-	
-	int GPIO_Init (struct _LED_Device *Device)
+	int GPIO_Init_R (struct _LED_Device *Device)
 	{
 		
-		return Interface_GPIO_Init(Device);
+		return Interface_GPIO_Init_R(Device);
+	
+	}
+	
+	
+	
+	
+	int Turn_on_B(struct _LED_Device *Device)
+	{
+	
+	  return Interface_Turn_on_B(Device);
+	}
+	
+	int Turn_off_B (struct _LED_Device *Device)
+	{
+		
+		return Interface_Turn_off_B(Device);
+	
+	}
+
+	int GPIO_Init_B (struct _LED_Device *Device)
+	{
+		
+		return Interface_GPIO_Init_B(Device);
 	
 	}
 
@@ -35,16 +51,16 @@ int Turn_on(struct _LED_Device *Device)
 	LED_Device SLED_Device[]={
 		{
 		   .name="LED_R",
-		   .GPIO_Init=GPIO_Init,
-		   .Turn_on=Turn_on,
-	     .Turn_off=Turn_off,
+		   .GPIO_Init=GPIO_Init_R,
+		   .Turn_on=Turn_on_R,
+	     .Turn_off=Turn_off_R,
 		},
 		
 		{
 		   .name="LED_B",
-		   .GPIO_Init=GPIO_Init,
-		   .Turn_on=Turn_on,
-		   .Turn_off=Turn_off,
+		   .GPIO_Init=GPIO_Init_B,
+		   .Turn_on=GPIO_Init_B,
+		   .Turn_off=GPIO_Init_B,
 		},
 	
 	};
